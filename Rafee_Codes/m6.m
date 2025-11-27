@@ -50,7 +50,7 @@ for vol=1:9
 %                     buf=Set{Expected_group_idx(k)};
                     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                     sss=0.26*log(10)/3;
-                    sig_v2=((1.55e8/10^0.0403)*(mass*E(curr(3))/10^14)^0.94)^(1/3)*exp(sss/2);
+                    sig_v2=((1.0677e8)*(mass*E(curr(3))/10^14)^0.94)^(1/3)*exp(sss/2);
                     sig_z=((curr(3)+1)*sig_v2/c);
                     [ idx_flag ] = isittrue_test(curr,Xdata,sig_z,mass,0.9999999);
                     buf=Xdata(idx_flag,:);

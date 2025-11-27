@@ -20,7 +20,7 @@ function [ tp,fp,T,GT_not_detected, expected_radius, r500 ] = get_tpfp(GT_mass,i
 %                             sig_z=(z+1)*sig_v/c;%/1.5;
 %                             
                                 sss=0.26*log(10)/3;
-                                sig_v2=((1.55e8/10^0.0403)*(GT_mass(k)*E(z)/10^14)^0.94)^(1/3)*exp(sss/2);
+                                sig_v2=((1.0677e8)*(GT_mass(k)*E(z)/10^14)^0.94)^(1/3)*exp(sss/2);
                                 sig_z=(1+z)*(sig_v2/c);
 %                                 sig_z=(sig_v2/c);
                             
@@ -66,7 +66,7 @@ function [ tp,fp,T,GT_not_detected, expected_radius, r500 ] = get_tpfp(GT_mass,i
 %                             sig_v=((1.55e8/10^0.0403)*((GT_ALLmass(k))*E(z)/10^14)^0.95)^(1/3)*10^(1.15192*0.0081);
 
                                 sss=0.26*log(10)/3;
-                                sig_v2=((1.55e8/10^0.0403)*(GT_ALLmass(k)*E(z)/10^14)^0.94)^(1/3)*exp(sss/2);
+                                sig_v2=((1.0677e8)*(GT_ALLmass(k)*E(z)/10^14)^0.94)^(1/3)*exp(sss/2);
                                 
                                 sig_z=(1+z)*sig_v2/c;%/1.5;
 %                             sig_z=(sig_v2/c);

@@ -31,7 +31,7 @@ function   prob = Noise_modified_Disc_adjusted2_old(XYZd,GP,mass)%(GP,XYZd,mass)
 
 
                                 sss=0.26*log(10)/3;
-                                sig_v2=((1.55e8/10^0.0403)*(mass*E(XYZd(3))/10^14)^0.94)^(1/3)*exp(sss/2);
+                                sig_v2=((1.0677e8)*(mass*E(XYZd(3))/10^14)^0.94)^(1/3)*exp(sss/2);
                                 sig_z=(1+XYZd(3))*(sig_v2/c);
                                 idx_zlocal=find(z_len<=(2*sig_z));
 

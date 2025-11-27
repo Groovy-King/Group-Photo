@@ -9,7 +9,7 @@ for vol=1:9
             
             dif_mass=cell(1,1);
             dif_post=cell(1,1);
-            load(strcat('RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
+            load(strcat('Input_PHT_WLF/RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
 %             run('Find_the_whole_sets_11.m')
             
             %Take the absolute mag.
@@ -62,7 +62,7 @@ for vol=1:9
 %              Xgrid=Xgrid(iz,:);
 
 
-            load(strcat('Expectedpr3_virAllT_mass_no_5_',num2str(vol),'_',num2str(slice),'.mat'));
+            load(strcat('Input_PHT_WLF/Expectedpr3_virAllT_mass_no_5_',num2str(vol),'_',num2str(slice),'.mat'));
 
              %Group WLF=Flg=1
             Flg=1;
