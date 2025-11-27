@@ -4,7 +4,7 @@
 for vol=1:9
     for slice=1:3
             cosmopar;
-            load(strcat('RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
+            load(strcat('Input/RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
             Xdata=Data(:,2:4);%[ra,dec,z];
             [Xdata,ia,ic]=unique(Xdata,'rows','stable');
             
@@ -34,7 +34,7 @@ for vol=1:9
                              Set{k}=[];
                             end
                        end
-                       save(strcat('Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(idxidx(masloop))),'Set');
+                       save(strcat('Output_Sets/Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(idxidx(masloop))),'Set');
                        Set=cell(1,1);
             end
 

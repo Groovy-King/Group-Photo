@@ -5,7 +5,7 @@ for vol=1
             
 % % %             dif_mass=cell(1,1);
 % % %             dif_post=cell(1,1);
-            load(strcat('RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
+            load(strcat('Input/RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
 
             appsolutemag=Data(:,9);
 
@@ -71,8 +71,8 @@ for vol=1
                         
                         
                         
-                       st=strcat('Expectedpr3_virAllG_mass_no_',num2str(5),'_',num2str(vol),'_',num2str(slice));
-                        %save(st, 'mass_no_final_md','P_MlG','P_GlM','mass_no_final_mn','Xgrid','New_idx','MASS_EST');
+                       st=strcat('Output_PMlG/Expectedpr3_virAllG_mass_no_',num2str(5),'_',num2str(vol),'_',num2str(slice));
+                        save(st, 'mass_no_final_md','P_MlG','P_GlM','mass_no_final_mn','Xgrid','New_idx','MASS_EST');
                         clearvars -except slice vol;
     end
 end
