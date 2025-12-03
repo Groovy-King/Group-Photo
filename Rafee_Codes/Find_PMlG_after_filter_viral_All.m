@@ -129,7 +129,7 @@ function [idx_new,p,MASS_EST] = Find_PMlG_after_filter_viral_All(vol,slice,idx,N
 
                                                                                 mass=idxidx(curr_ms);
 
-                                                                                load(strcat('Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(mass),'.mat'));
+                                                                                load(strcat('Output_Sets/Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(mass),'.mat'));
                                                                                 Set_b=Set(idx_rf);
                                                                                 non=cellfun(@isempty,Set_b);
                                                                                 idxnonz=find(non==0);
@@ -234,7 +234,7 @@ function [idx_new,p,MASS_EST] = Find_PMlG_after_filter_viral_All(vol,slice,idx,N
                                             
                                                         for msms=1:10
                                                             mass=idxidx(msms);
-                                                            sdt=load(strcat('Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(mass),'.mat'));
+                                                            sdt=load(strcat('Output_Sets/Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(mass),'.mat'));
                                                                 if ~isempty(sdt.Set{idx(pos)})
                                                                     len=length(sdt.Set{idx(pos)});
                                                                     xcc=length(xcentr);
@@ -284,7 +284,7 @@ function [idx_new,p,MASS_EST] = Find_PMlG_after_filter_viral_All(vol,slice,idx,N
                                     
                                               for ms_gg=1:10
 
-                                                  sd=load(strcat('Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(idxidx(ms_gg)),'.mat'));
+                                                  sd=load(strcat('Output_Sets/Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(idxidx(ms_gg)),'.mat'));
                                                   Net=sd.Set(idx_new(:,1));
                                                   
                                                   
