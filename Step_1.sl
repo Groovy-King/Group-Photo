@@ -8,5 +8,6 @@
 #SBATCH --mem=12000             # adjust this according to the memory requirement per node you need
 
 # Choose a version of MATLAB by loading a module:
+cd Rafee_Codes/
 module load matlab/2025b.1
 matlab -singleCompThread -batch "Find_the_whole_sets_0.m"
