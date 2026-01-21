@@ -128,7 +128,7 @@ function [idx_new,p,MASS_EST] = Find_PMlG_after_filter_viral_All(vol,slice,idx,N
                                                                 for curr_ms=1:length(indexx)
 
                                                                                 mass=idxidx(curr_ms);
-
+										disp('Loading Output Sets', num2str(mass));
                                                                                 load(strcat('Output_Sets/Set_mass_vol',num2str(vol),'_slice_',num2str(slice),'_',num2str(mass),'.mat'));
                                                                                 Set_b=Set(idx_rf);
                                                                                 non=cellfun(@isempty,Set_b);
