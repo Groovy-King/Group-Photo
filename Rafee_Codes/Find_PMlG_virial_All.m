@@ -1,12 +1,10 @@
  
-for vol=1
-
-    for slice=1
+function Find_PMlG_virial_All(vol, slice)
             
 % % %             dif_mass=cell(1,1);
 % % %             dif_post=cell(1,1);
             load(strcat('Input/RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
-
+	    disp('Loaded RA and Dec Inputs!');
             appsolutemag=Data(:,9);
 
             Lum=Data(:,8);
@@ -34,8 +32,10 @@ for vol=1
 %                 load(strcat('Expectedpr3_vir_mass_no_5_',num2str(vol),'_',num2str(slice),'.mat'));
 % %                 [idx_new,P_MlG,MASS_EST]=Find_PMlG_after_filter_viral_All(vol,slice,New_idx,Xgrid);
 
+			disp('Calling Aux function!');
                         [idx_new,P_MlG,MASS_EST]=Find_PMlG_after_filter_viral_All(vol,slice,IX,Xdata);
-            
+            		disp('Returned!');
+
                         lia=ismember(New_idx,idx_new(:,1));
                         chosen_idx=find(lia);
                         Xgrid=Xgrid(chosen_idx,:);
@@ -74,5 +74,4 @@ for vol=1
                        st=strcat('Output_PMlG/Expectedpr3_virAllG_mass_no_',num2str(5),'_',num2str(vol),'_',num2str(slice));
                         save(st, 'mass_no_final_md','P_MlG','P_GlM','mass_no_final_mn','Xgrid','New_idx','MASS_EST');
                         clearvars -except slice vol;
-    end
 end

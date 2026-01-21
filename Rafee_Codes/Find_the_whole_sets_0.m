@@ -1,6 +1,6 @@
 % matlabpool('open','AttachedFiles',{'E.m'})
 
-
+disp('Starting Run!')
 for vol=1:9
     for slice=1:3
             cosmopar;
