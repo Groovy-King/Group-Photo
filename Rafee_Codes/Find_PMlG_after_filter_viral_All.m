@@ -272,7 +272,7 @@ function [idx_new,p,MASS_EST] = Find_PMlG_after_filter_viral_All(vol,slice,idx,N
                                     idxidx=round(linspace(41,90,10)); 
                                     ms=ms(idxidx);
 
-                                    load(strcat('RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
+                                    load(strcat('Input/RA_Dec_Z_Vol_',num2str(vol),'_Slice',num2str(slice),'.mat'));
 
                                     Xdata=Data(:,2:4);
                                     [Xdata,ia,ic]=unique(Xdata,'rows','stable');
