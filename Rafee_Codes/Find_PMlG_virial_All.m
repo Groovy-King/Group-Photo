@@ -20,14 +20,14 @@ function Find_PMlG_virial_All(vol, slice)
             numbertotake=round(100*sum(num)/100);
             [B,IX]=sort(Lum,'descend');
             Xdata=Xdata(IX(1:numbertotake),:);
-% % %             appsolutemag= appsolutemag(IX(1:numbertotake));
-% % %                [Xgrid,New_idx]=check_gals( X_orig,Xdata,10^12,IX(1:numbertotake));
-% % %              [ss,iz,ix]=unique(New_idx);
-% % %              New_idx=New_idx(iz);
-% % %              Xgrid=Xgrid(iz,:);
-% % %               mass_no_final=0;
-% % %               mass_no_final_mn=0;
-% % %               mass_no_final_md=0;
+             appsolutemag= appsolutemag(IX(1:numbertotake));
+                [Xgrid,New_idx]=check_gals( X_orig,Xdata,10^12,IX(1:numbertotake));
+              [ss,iz,ix]=unique(New_idx);
+              New_idx=New_idx(iz);
+              Xgrid=Xgrid(iz,:);
+               mass_no_final=0;
+               mass_no_final_mn=0;
+               mass_no_final_md=0;
 
 %                 load(strcat('Expectedpr3_vir_mass_no_5_',num2str(vol),'_',num2str(slice),'.mat'));
 % %                 [idx_new,P_MlG,MASS_EST]=Find_PMlG_after_filter_viral_All(vol,slice,New_idx,Xgrid);
@@ -74,4 +74,5 @@ function Find_PMlG_virial_All(vol, slice)
                        st=strcat('Output_PMlG/Expectedpr3_virAllG_mass_no_',num2str(5),'_',num2str(vol),'_',num2str(slice));
                         save(st, 'mass_no_final_md','P_MlG','P_GlM','mass_no_final_mn','Xgrid','New_idx','MASS_EST');
                         clearvars -except slice vol;
+			disp('Success!');
 end
